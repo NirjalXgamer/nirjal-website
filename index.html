@@ -164,7 +164,7 @@ background-attachment: fixed;;
         <a href="about.html">About Me</a>
         <a href="projects.html">Projects</a>
         <a href="skills.html">Skills</a>
-        <a href="mailto:nirjalgamer42069@gmail.com">Contact</a>
+        <a href="#" onclick="openContact(event)">Contact</a>
         </div>
     </nav>
 
@@ -187,6 +187,19 @@ background-attachment: fixed;;
     <p>Learning • Building • Creating</p>
     <small>© 2026 Nirjal Dahal. All rights reserved.</small>
 </footer>
+<script>
+function openContact(event) {
+    event.preventDefault();
 
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = "mailto:nirjalgamer42069@gmail.com";
+    } else {
+        window.open(
+            "https://mail.google.com/mail/?view=cm&to=nirjalgamer42069@gmail.com",
+            "_blank"
+        );
+    }
+}
+</script>
 </body>
 </html>
