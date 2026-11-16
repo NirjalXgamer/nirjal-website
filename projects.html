@@ -13,14 +13,32 @@
             font-family: Arial, sans-serif;
             color: white;
             margin: 0;
+            background:
+    radial-gradient(
+        circle at 20% 80%,
+        rgba(150, 30, 60, 0.15),
+        transparent 40%
+    ),
+    #0b0b0b;
+
+background-attachment: fixed;
         }
 
         /* Navigation */
         .navbar {
-            display: flex;
-            justify-content: flex-end;
-            padding: 20px 50px;
-        }
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 50px;
+
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
         .nav-links a {
             color: #c0c0c0;
@@ -29,10 +47,10 @@
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: white;
-        }
-
+         .nav-links a:hover {
+          color: #d4af37;
+          text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+         }
         /* Projects Section */
         .projects {
             text-align: center;
@@ -61,10 +79,13 @@
             transition: 0.3s;
         }
 
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: #c0c0c0;
-        }
+        .project-card:hover,
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
 
         .project-card h2 {
             color: #c0c0c0;
@@ -77,20 +98,19 @@
 
         /* Project Button */
         .project-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 25px;
-            background-color: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
+    background: linear-gradient(135deg, #d4af37, #f5df91);
+    color: #111;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
 
-        .project-link:hover {
-            background-color: #c0c0c0;
-            transform: translateY(-3px);
-        }
+.project-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
 
         /* Footer */
         .footer {
@@ -148,6 +168,9 @@
         transform: translateY(0);
     }
 }
+.project-link:hover {
+    transform: scale(1.08);
+}
     </style>
 </head>
 
@@ -157,9 +180,10 @@
     <nav class="navbar">
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-            <a href="mailto:nirjalgamer42069@gmail.com">Contact</a>
-            <a href="projects.html">Projects</a>
+        <a href="about.html">About Me</a>
+        <a href="projects.html">Projects</a>
+        <a href="skills.html">Skills</a>
+      <a href="#" onclick="openContact(event)">Contact</a>
         </div>
     </nav>
 
@@ -196,6 +220,19 @@
         <p>Learning • Building • Creating</p>
         <small>© 2026 Nirjal Dahal. All rights reserved.</small>
     </footer>
+<script>
+function openContact(event) {
+    event.preventDefault();
 
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = "mailto:nirjalgamer42069@gmail.com";
+    } else {
+        window.open(
+            "https://mail.google.com/mail/?view=cm&to=nirjalgamer42069@gmail.com",
+            "_blank"
+        );
+    }
+}
+</script>
 </body>
 </html>
