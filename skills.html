@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Skills | Nirjal</title>
+
+    <style>
+        body {
+            background-color: #292929;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            background:
+    radial-gradient(
+        circle at 80% 80%,
+        rgba(40, 100, 200, 0.15),
+        transparent 40%
+    ),
+    #080d18;
+
+background-attachment: fixed;
+        }
+
+        /* Navigation */
+        .navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 50px;
+
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+        .nav-links a {
+            color: #c0c0c0;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+         .nav-links a:hover {
+    color: #d4af37;
+    text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+         }
+
+        /* Skills Section */
+        .skills {
+            text-align: center;
+            margin-top: 100px;
+            animation: fadeIn 1s ease;
+        }
+
+        .skills h1 {
+            font-size: 45px;
+            background: linear-gradient(to right, white, #999999);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .skills > p {
+            color: #aaaaaa;
+        }
+
+        /* Skills Grid */
+        .skill-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 15px;
+        }
+
+        /* Skill Cards */
+        .skill-card {
+            background-color: #383838;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #555;
+            transition: 0.3s;
+        }
+
+        .project-card:hover,
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+        .skill-card h2 {
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        /* Individual Skill Colors */
+        .html-title {
+            color: #E87932;
+        }
+
+        .css-title {
+            color: #5799DB;
+        }
+
+        .js-title {
+            color: #E5C64A;
+        }
+
+        .php-title {
+            color: #AAAAAA;
+        }
+
+        .skill-card p {
+            color: #aaaaaa;
+        }
+
+        /* Status Badge */
+        .skill-card span {
+            display: inline-block;
+            background-color: #555;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+                padding: 20px 10px;
+            }
+
+            .nav-links a {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+
+            .skills h1 {
+                font-size: 36px;
+            }
+
+            .skill-container {
+                gap: 12px;
+            }
+
+            .skill-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="#" onclick="openContact(event)">Contact</a>
+    </nav>
+
+    <!-- Skills -->
+    <section class="skills">
+
+        <h1>My Skills</h1>
+
+        <p>Technologies I'm learning to become a web developer.</p>
+
+        <div class="skill-container">
+
+            <div class="skill-card">
+                <h2 class="html-title">HTML</h2>
+                <p>Learning the structure of websites.</p>
+                <span>Learning</span>
+            </div>
+
+            <div class="skill-card">
+                <h2 class="css-title">CSS</h2>
+                <p>Currently learning to style websites.</p>
+                <span>In Progress</span>
+            </div>
+
+            <div class="skill-card">
+                <h2 class="js-title">JS</h2>
+                <p>Planning to learn website interactivity.</p>
+                <span>Upcoming</span>
+            </div>
+
+            <div class="skill-card">
+                <h2 class="php-title">PHP</h2>
+                <p>Planning to learn backend development.</p>
+                <span>Upcoming</span>
+            </div>
+
+        </div>
+
+    </section>
+<script>
+function openContact(event) {
+    event.preventDefault();
+
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = "mailto:nirjalgamer42069@gmail.com";
+    } else {
+        window.open(
+            "https://mail.google.com/mail/?view=cm&to=nirjalgamer42069@gmail.com",
+            "_blank"
+        );
+    }
+}
+</script>
+</body>
+</html>
