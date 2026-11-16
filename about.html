@@ -1,23 +1,44 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>About Me | Nirjal</title>
 
     <style>
+        /* General Styling */
         body {
-            background-color: #292929;
-            font-family: Arial;
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(180, 180, 180, 0.12),
+                    transparent 40%
+                ),
+                #101010;
+
+            background-attachment: fixed;
+
+            font-family: Arial, sans-serif;
             color: white;
             margin: 0;
         }
 
+        /* Navigation Bar */
         .navbar {
             display: flex;
             justify-content: flex-end;
             padding: 20px 50px;
+
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .nav-links a {
@@ -28,18 +49,29 @@
         }
 
         .nav-links a:hover {
-            color: white;
+            color: #d4af37;
+            text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
         }
 
+        /* About Section */
         .about {
             text-align: center;
             margin: 120px auto;
             max-width: 650px;
+            padding: 0 20px;
+
+            animation: fadeIn 1s ease;
         }
 
         .about h1 {
             font-size: 50px;
-            background: linear-gradient(to right, white, #c0c0c0);
+
+            background: linear-gradient(
+                to right,
+                white,
+                #c0c0c0
+            );
+
             -webkit-background-clip: text;
             color: transparent;
         }
@@ -49,29 +81,142 @@
             line-height: 1.8;
             font-size: 17px;
         }
+
+        /* About Card */
+        .about-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 35px;
+            transition: 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 150px;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer h2 {
+            letter-spacing: 3px;
+            font-size: 20px;
+        }
+
+        .footer p {
+            color: #aaaaaa;
+        }
+
+        .footer small {
+            color: #777777;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+                padding: 20px 10px;
+            }
+
+            .nav-links a {
+                margin-left: 10px;
+                font-size: 13px;
+            }
+
+            .about {
+                margin: 80px auto;
+            }
+
+            .about h1 {
+                font-size: 38px;
+            }
+
+            .about p {
+                font-size: 15px;
+            }
+
+            .about-card {
+                padding: 20px;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
-            <a href="mailto:nirjalgamer42069@gmail.com">Contact</a>
             <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+          <a href="#" onclick="openContact(event)">Contact</a>
         </div>
     </nav>
 
+    <!-- About Section -->
     <section class="about">
+
         <h1>About Me</h1>
 
-        <p>
-            Hey! I'm Nirjal Dahal, a student from Nepal.
-            I'm currently learning HTML and exploring
-            the world of web development.
-        </p>
+        <div class="about-card">
+            <p>
+                Hey! I'm Nirjal Dahal, a student from Nepal.
+                I'm currently learning HTML and exploring
+                the world of web development.
+            </p>
+
+            <p>
+                My goal is to become a skilled web developer
+                and create modern, creative and useful websites.
+            </p>
+        </div>
+
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <h2>NIRJAL DAHAL</h2>
+        <p>Learning • Building • Creating</p>
+        <small>© 2026 Nirjal Dahal. All rights reserved.</small>
+    </footer>
+<script>
+function openContact(event) {
+    event.preventDefault();
+
+    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        window.location.href = "mailto:nirjalgamer42069@gmail.com";
+    } else {
+        window.open(
+            "https://mail.google.com/mail/?view=cm&to=nirjalgamer42069@gmail.com",
+            "_blank"
+        );
+    }
+}
+</script>
 </body>
 </html>
+```
